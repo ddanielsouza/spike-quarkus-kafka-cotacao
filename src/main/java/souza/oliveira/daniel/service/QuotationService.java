@@ -2,6 +2,7 @@ package souza.oliveira.daniel.service;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import org.eclipse.microprofile.opentracing.Traced;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import souza.oliveira.daniel.client.CurrencyPriceClient;
 import souza.oliveira.daniel.dto.CurrencyPriceDTO;
@@ -14,6 +15,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @ApplicationScoped
+@Traced
 public class QuotationService {
     private final CurrencyPriceClient currencyPriceClient;
     private final QuotationRepository quotationRepository;
